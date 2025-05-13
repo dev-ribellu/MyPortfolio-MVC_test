@@ -1,0 +1,53 @@
+.formulaire-contact {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid white; /* Ajoute une bordure blanche */
+    border-radius: 0; /* Enlève les bords arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0; /* Enlève les bords arrondis des champs */
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    height: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    font-family: Arial, sans-serif; /* Définit la police Arial pour les placeholders */
+}
+
+@media (max-width: 480px) {
+    .formulaire-contact {
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+    }
+}

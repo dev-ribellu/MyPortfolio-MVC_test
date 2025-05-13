@@ -1,0 +1,84 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Utilisez space-between pour espacer les cartes */
+    margin-top: 20px;
+    width: 100%; /* Assurez-vous que les cartes utilisent toute la largeur disponible */
+}
+
+.card {
+    border: 1px solid white;
+    position: relative;
+    flex: 1 1 calc(33.333% - 20px); /* Ajustez la largeur pour 3 cartes par ligne avec un espace entre elles */
+    height: 10vh;
+    width: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: rotate(10deg);
+}
+
+.card-text {
+    font-size: 20px;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-plus {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-text {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.card:hover .card-plus {
+    opacity: 1;
+}
+.card:hover .card-image {
+    opacity: 1;
+}
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(45% - 20px); /* Ajustez la largeur pour 2 cartes par ligne sur les écrans moyens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* Ajustez la largeur pour 1 carte par ligne sur les petits écrans */
+        height: auto;
+    }
+
+    .card-text {
+        font-size: 16px;
+    }
+
+    .card-plus {
+        font-size: 30px;
+    }
+}
