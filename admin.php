@@ -59,7 +59,69 @@ $mails = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section>
     <!-- /Section Modifier Accueil -->
-
+      
+   
+    
+    <!-- Section : Gérer les Métiers -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card card-secondary">
+          <div class="card-header">
+            <h3 class="card-title">Gérer les Métiers</h3>
+          </div>
+          <div class="card-body">
+            <!-- Formulaire d'ajout d'un métier -->
+            <form action="controler/manage_job.php" method="post" class="mb-4">
+              <div class="form-group">
+                <label for="new_job">Ajouter un Métier</label>
+                <input type="text" class="form-control" id="new_job" name="job_name" placeholder="Entrez le nom du métier">
+              </div>
+              <input type="hidden" name="action" value="add">
+              <button type="submit" class="btn btn-success">Ajouter</button>
+            </form>
+          
+            <!-- Affichage des métiers existants -->
+            <?php
+              $jobsStmt = $pdo->query("SELECT * FROM metiers ORDER BY id ASC");
+              $jobs = $jobsStmt->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Métier</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach($jobs as $job): ?>
+                  <tr>
+                    <td><?= htmlspecialchars($job['id']) ?></td>
+                    <td>
+                      <form action="controler/manage_job.php" method="post" class="form-inline">
+                        <input type="text" name="job_name" value="<?= htmlspecialchars($job['nom']) ?>" class="form-control">
+                        <input type="hidden" name="job_id" value="<?= htmlspecialchars($job['id']) ?>">
+                        <input type="hidden" name="action" value="edit">
+                        <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+                      </form>
+                    </td>
+                    <td>
+                      <form action="controler/manage_job.php" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce métier ?');">
+                        <input type="hidden" name="job_id" value="<?= htmlspecialchars($job['id']) ?>">
+                        <input type="hidden" name="action" value="delete">
+                        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                      </form>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+   
     <!-- Section : Modifier A Propos -->
     <section class="content">
       <div class="container-fluid">
