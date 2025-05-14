@@ -1,0 +1,97 @@
+:root {
+    --center-bg: #0000004d;
+    --skill-border: #ffffff;
+    --skill-level-bg: #990cb3;
+}
+
+
+.grand-titre {
+    font-size: 160px;
+    margin: 0;
+    position: relative;
+    z-index: 0;
+    color: rgba(255, 255, 255, 0.1); /* Couleur du grand titre avec transparence */
+}
+
+.center {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--center-bg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.skillbox {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.skillbox p {
+    color: #fff;
+    margin: 0 0 0 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.skillbox p:nth-child(2) {
+    position: relative;
+    float: right;
+    top: -22px;
+}
+
+.skill {
+    background-color: #0a0a0ac9;
+    padding: 4px;
+    border: 1px solid var(--skill-border);
+    border-radius: 2px;
+}
+
+.skill_level {
+    background-color: var(--skill-level-bg);
+    width: 0; /* Initialement à 0 pour l'animation */
+    height: 10px;
+    transition: width 2s ease-in-out; /* Animation de la largeur */
+}
+
+@media (max-width: 480px) {
+    .grand-titre {
+        font-size: 80px;
+    }
+
+    .center {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .skillbox p {
+        font-size: 14px;
+    }
+
+    .skill_level {
+        height: 8px;
+    }
+
+    /* Styles pour les compétences logicielles sur les appareils mobiles */
+    .skill_level {
+        width: 100%; /* Assurez-vous que les barres de compétences ne dépassent pas */
+        box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+    }
+
+    .skills-container {
+        padding: 0 10px; /* Ajouter du padding pour éviter que le contenu touche les bords de l'écran */
+    }
+}

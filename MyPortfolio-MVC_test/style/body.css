@@ -1,0 +1,125 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Assurez-vous que le html et le body utilisent toute la largeur */
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+    font-family: roboto, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Utilisez flex-direction: column pour que le main prenne toute la hauteur */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem; /* 18px converti par rapport à une base de 16px */
+    min-width: 872px; /* Largeur minimale de 872px */
+}
+
+main {
+  flex: 1; /* Assurez-vous que le main prend toute la hauteur disponible */
+  width: 100%; /* Utilisez toute la largeur disponible */
+  padding-top: 80px; 
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Assurez-vous que les particules sont derrière le contenu */
+}
+
+.boutons {
+  display: flex;
+  gap: 20px; 
+  margin-top: 20px; 
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 25px; 
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); 
+}
+
+#boutonsCV:hover::before {
+    content: "Télécharger CV";
+    position: absolute;
+    bottom: 100%; /* Afficher au-dessus du bouton */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000; /* Même couleur de fond que votre site */
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-bottom: 8px; /* Espacement entre le texte et le bouton */
+    font-size: 0.9rem;
+}
+
+button:disabled,
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; /* Réduit l'opacité pour les boutons désactivés */
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Scrollbar personnalisée pour Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Fond invisible */
+  border: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><text x='0' y='14' font-size='16' fill='white'>⇕</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Optionnel : ajouter un arrondi */
+  border-radius: 8px;
+}
+
+/* Optionnel : pour masquer les boutons de défilement (facultatifs) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Pour Firefox (options limitées) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+}

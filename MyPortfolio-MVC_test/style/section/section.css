@@ -1,0 +1,48 @@
+section {
+    height: 100vh; /* Utilisez toute la hauteur de la fenêtre */
+    width: 90%; /* Utilisez toute la largeur disponible */
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255); /* Ajoute une bordure blanche de 2px */
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px; /* Ajoute un espace de 20px entre les sections */
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(0, 0, 0, 0.679);
+}
+section {
+    transform: scale(0.5);
+    opacity: 0; /* Optionnel pour un fondu d'entrée */
+    transition: transform 1.1s ease-out, opacity 0.5s ease-out;
+}
+
+.titre {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px; /* Ajustez la marge en bas si nécessaire */
+}
+
+.sous-titre {
+    font-size: 40px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white; /* Couleur du sous-titre */
+}
+
+@media (max-width: 480px) {
+    section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sous-titre {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,35 @@
+body {
+  background-color: #e0e0e0 !important; /* Gris corporate */
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+
+.drop-zone {
+    padding: 20px;
+    border: 2px dashed #ced4da;
+    border-radius: 0.25rem;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  .drop-zone.dragover {
+    background-color: #e9ecef;
+  }
+  .drop-zone img {
+    max-width: 200px;
+    max-height: 200px;
+    display: none;
+    margin-top: 10px;
+  }
+  .wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e0e0e0; /* Gris corporate */
+    color: #333;
+  }
+  section.content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}

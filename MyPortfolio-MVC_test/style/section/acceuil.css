@@ -1,0 +1,111 @@
+#accueil {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    border: none;
+}
+
+.container-acceuil {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre les éléments horizontalement */
+}
+
+.image-cercle {
+    flex-shrink: 0;
+    width: 30%; /* Définissez la largeur en pixels pour un cercle parfait */
+    height: 30%; /* Définissez la hauteur en pixels pour un cercle parfait */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    aspect-ratio: 1/1; /* Définissez le ratio de l'image */
+    margin-right: 10%;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5); /* Ajoute une ombre intérieure */
+}
+
+.image-cercle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, clip-path 0.3s ease; /* Ajout des transitions */
+}
+
+.texte {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le texte horizontalement */
+}
+
+.texte p {
+    margin: 5px 0;
+}
+
+.ligne1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+
+.ligne2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 72px;
+    color: #000000;
+    -webkit-text-stroke: 2px white;
+}
+
+.ligne3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px; /* Vous pouvez ajuster cette taille selon vos besoins */
+    border-right: 2px solid white; /* Curseur clignotant */
+    white-space: nowrap;
+    overflow: hidden;
+    height: 40px; /* Définissez une hauteur fixe pour éviter les mouvements verticaux */
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+}
+/*
+.boutons {
+    display: flex;
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; 
+    background-color: 000000;
+    color: #000000;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); 
+}
+*/
+
+@media (max-width: 480px) {
+    .container-acceuil {
+        flex-direction: column;
+    }
+
+    .image-cercle {
+        width: 50%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .texte p {
+        font-size: 18px;
+    }
+
+    .ligne2 {
+        font-size: 48px;
+    }
+
+    .ligne3 {
+        font-size: 24px;
+    }
+}

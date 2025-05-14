@@ -1,0 +1,111 @@
+#aboutme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255); /* Ajoute une bordure blanche de 2px */
+    transform: scale(0.5);
+    opacity: 0; /* Optionnel pour un fondu d'entrée */
+    transition: transform 1.1s ease-out, opacity 0.5s ease-out;
+    
+    margin-bottom: 20px; /* Ajoute un espace de 20px entre les sections */
+    padding-top: 10px; /* Réduisez le padding en haut */
+}
+
+
+
+.grand-titre {
+    font-size: 160px;
+    margin: 0;
+    position: relative;
+    z-index: 0;
+    color: rgba(255, 255, 255, 0.1); /* Couleur du grand titre avec transparence */
+}
+
+.contenu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.image-carre {
+    flex-shrink: 0;
+    width: 60%; /* Définissez la largeur en pourcentage */
+    height: 60vh; /* Définissez la hauteur en pourcentage */
+    border-radius: 0; /* Carré */
+    overflow: hidden;
+    margin-right: 20px;
+    border: 1px solid white; /* Ajoute une bordure blanche de 1px */
+}
+
+.image-carre img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texte {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nom {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+}
+
+.description {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.infos p {
+    margin: 5px 0;
+}
+
+@media (max-width: 480px) {
+    .contenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-carre {
+        width: 80%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .texte {
+        align-items: center;
+    }
+
+    .nom {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .infos p {
+        font-size: 14px;
+    }
+    .container-about h2 {
+        font-size: 28px;
+    }
+
+    .container-about p {
+        font-size: 16px;
+    }
+
+    .container-about .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+}
+
+

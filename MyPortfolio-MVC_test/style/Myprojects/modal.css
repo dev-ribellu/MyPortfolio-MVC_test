@@ -1,0 +1,68 @@
+
+/* Styles de la modale */
+.modal {
+    display: none; /* Masquée par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+@keyframes borderPulse {
+  0% {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.modal-content {
+    background-color: #000000f8;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: borderPulse 3s ease-out infinite;
+}
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-content img {
+    max-width: 100%;    /* L'image ne dépassera pas la largeur du conteneur */
+    max-height: 300px;  /* Limite la hauteur, adapte cette valeur selon tes besoins */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+#modalTitle {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+#modalDescription {
+    font-family: "Open Sans", sans-serif;
+}
+#modalFiles {
+    color:rgb(119, 255, 255); 
+    display:none; 
+    vertical-align: middle;
+}
+#modalFiles:hover {
+    text-decoration: underline;
+}
