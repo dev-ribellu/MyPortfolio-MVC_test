@@ -363,6 +363,51 @@ $mails = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section>
   </div>
+    
+  <section class="content" id="project-list-section">
+    <div class="container-fluid">
+      <div class="card card-danger">
+        <div class="card-header">
+          <h3 class="card-title">Liste des Projets</h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $projets = $homeController->getProjets();
+                if (!empty($projets)) {
+                  foreach ($projets as $proj) {
+                    ?>
+                    <tr>
+                      <td><?= htmlspecialchars($proj['id']) ?></td>
+                      <td><?= htmlspecialchars($proj['titre']) ?></td>
+                      <td>
+                        <form action="controler/manage_projet.php" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?');">
+                          <input type="hidden" name="project_id" value="<?= htmlspecialchars($proj['id']) ?>">
+                          <input type="hidden" name="action" value="delete">
+                          <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                        </form>
+                      </td>
+                    </tr>
+                    <?php
+                  }
+                } else {
+                  echo '<tr><td colspan="3">Aucun projet trouvé</td></tr>';
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Inclusion des scripts externalisés -->
   <script src="script/drop.js"></script>
   <script src="script/tech_admin.js"></script>
