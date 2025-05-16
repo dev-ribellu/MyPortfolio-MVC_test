@@ -28,6 +28,12 @@ $mails = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="AdminLTE/dist/css/adminlte.css">
 </head>
 <body class="hold-transition sidebar-mini">
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f4f6f9;">
+    <a href="index.php">
+      <img src="images/dev-logo.png" alt="Logo" style="height: 40px;">
+    </a>
+    <a href="controler/logout.php" class="btn btn-danger">Déconnexion</a>
+  </header>
   <div class="wrapper">
     <!-- Section : Modifier Accueil -->
     <section class="content">
